@@ -32,8 +32,9 @@
   .snap{position:absolute; right:20px; bottom:16px; font-size:11.5px; color:#93a5d0;
         background:rgba(0,0,0,.25); padding:3px 10px; border-radius:8px; z-index:2;}
   .cover{flex:0 1 360px; min-width:0; max-width:400px; border-radius:14px; overflow:hidden;
-         box-shadow:0 14px 34px rgba(0,0,0,.35); border:2px solid rgba(255,255,255,.25);}
-  .cover img{display:block; width:100%; aspect-ratio:16/9; object-fit:cover;}
+         box-shadow:0 14px 34px rgba(0,0,0,.35); border:2px solid rgba(255,255,255,.25); position:relative;}
+  .cover::before{content:""; display:block; padding-top:56.25%;}
+  .cover img{display:block; position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover;}
   @media(max-width:860px){.hero{padding:24px 20px;}
     .hero-grid{flex-direction:column; align-items:stretch;}
     .cover{max-width:420px; width:100%; align-self:center;}
