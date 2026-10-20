@@ -32,8 +32,9 @@
   .snap{position:absolute; right:20px; bottom:16px; font-size:11.5px; color:#93a5d0;
         background:rgba(0,0,0,.25); padding:3px 10px; border-radius:8px; z-index:2;}
   .cover{flex:0 1 360px; min-width:0; max-width:400px; border-radius:14px; overflow:hidden;
-         box-shadow:0 14px 34px rgba(0,0,0,.35); border:2px solid rgba(255,255,255,.25);}
-  .cover img{display:block; width:100%; aspect-ratio:16/9; object-fit:cover;}
+         box-shadow:0 14px 34px rgba(0,0,0,.35); border:2px solid rgba(255,255,255,.25); position:relative;}
+  .cover::before{content:""; display:block; padding-top:56.25%;}
+  .cover img{display:block; position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover;}
   @media(max-width:860px){.hero{padding:24px 20px;}
     .hero-grid{flex-direction:column; align-items:stretch;}
     .cover{max-width:420px; width:100%; align-self:center;}
@@ -87,6 +88,15 @@
   .sec-h h2{min-width:0; word-break:break-word;}
   .quotes>*, .hl-grid>*{min-width:0;}
   .tbl-wrap{overflow-x:auto; -webkit-overflow-scrolling:touch;}
+  .neg-sec{margin-top:16px;}
+  .neg-title{font-size:13px; font-weight:700; color:var(--ink); margin-bottom:10px;}
+  .neg-list{display:flex; flex-direction:column; gap:6px;}
+  .neg-item{display:flex; align-items:flex-start; gap:10px; background:#fafbfe; border:1px solid var(--line);
+            border-radius:10px; padding:8px 12px; font-size:13px; line-height:1.55;}
+  .neg-idx{flex-shrink:0; font-size:11px; font-weight:800; color:#fff; background:#9aa7c2;
+           border-radius:6px; padding:2px 7px; margin-top:1px;}
+  .neg-txt{flex:1; color:var(--ink); word-break:break-all;}
+  .neg-like{flex-shrink:0; font-size:11.5px; color:var(--sub); white-space:nowrap;}
   .tbl-wrap table{min-width:560px;}
   h1,h2,h3{overflow-wrap:break-word;}
 
@@ -255,7 +265,7 @@
       <div class="mini">
         <h3><span class="dot"></span>品牌词提及（弹幕+评论）</h3>
         <div style="font-size:14px; color:var(--ink);">智驾 <b style="color:var(--brand);">1</b></div>
-        <div style="font-size:12.5px; color:var(--sub); margin-top:10px;">「小米」「保时捷」为弹幕心智高频词；品牌词基于评论区识别，正式投放口径以双方合同为准。</div>
+        <div style="font-size:12.5px; color:var(--sub); margin-top:10px;">「小米 / 保时捷」为弹幕心智高频词；品牌词基于评论区识别，正式投放口径以双方合同为准。</div>
       </div>
     </div>
   </section>
@@ -275,13 +285,14 @@
         <tr><td><b>其他负面（零星噪声）</b></td><td>词典粗分命中的零星负面/误伤（无代表性原文，多为主观语气与玩梗反讽）</td><td>低</td><td><span class="pill low">低风险</span></td></tr>
       </table>
     </div>
+    <div class="neg-sec"><div class="neg-title">负面样本明细 · 点赞 Top6（共 6 条；词典粗分，含零星误伤/玩梗）</div><div class="neg-list"><div class="neg-item"><span class="neg-idx">01</span><span class="neg-txt">6月份股票大赚还看过几台gt3，实在是太硬太颠了，日常代步实在太难受了，可谁又能天天去天马跑圈呢，正在犹豫是992 turbos还是991的gt3时7月份来了，买车的预算亏进去了[笑哭]郭雨这个加套件的rs更难受了，估计开不了多久就要卖了，</span><span class="neg-like">👍 12</span></div><div class="neg-item"><span class="neg-idx">02</span><span class="neg-txt">能看看我的视频，给点宝贵的建议吗？谢谢大家[给心心][给心心]</span><span class="neg-like">👍 3</span></div><div class="neg-item"><span class="neg-idx">03</span><span class="neg-txt">刚从老家出来没多久，前面找工作被中介坑了，两天了一点东西没吃，有人可以帮帮我吗，一顿饭就行，十分谢谢[委屈]</span><span class="neg-like">👍 1</span></div><div class="neg-item"><span class="neg-idx">04</span><span class="neg-txt">我不知道为什么看雨哥很难受很尴尬😅</span><span class="neg-like">👍 1</span></div><div class="neg-item"><span class="neg-idx">05</span><span class="neg-txt">有没有人能帮我一碗面 真的遇到难处了哎</span><span class="neg-like">👍 1</span></div><div class="neg-item"><span class="neg-idx">06</span><span class="neg-txt">别的不说，让天下第一的3yc来，闪亮你们麻痹的眼，闪爆真有车的车主，就闪就完了，天下第一，不论有没有得充电，反正就是闪，充过电的人都懂，就闪，三大黑恶势力了解一下？？？</span><span class="neg-like">👍 0</span></div></div></div>
     <div style="font-size:13.5px; color:var(--ink); margin-top:12px;">✅ 未发现安全事故、质量投诉、品牌形象受损类负面；高赞位被粉丝共鸣与玩梗评论主导，整体可控。</div>
   </section>
 
   <!-- 06 结案要点 -->
   <section>
     <div class="sec-h"><span class="sec-no">06</span><h2>结案要点（可直接用于对甲方汇报）</h2><span class="hint">基于 2026-10-14 数据快照与舆情样本生成</span></div>
-    <div class="hl-grid"><div class="hl hl gold"><b>🚀 播放开局强劲</b><span>上线 5 天累计 1,320,749 播放、日均 ≈264,150，达 2026 年账号中位（141.1 万）的 93.8%、均值（216.3 万）的 61.1%——发布即冲高，进入账号头部梯队。</span></div><div class="hl hl gold"><b>💎 互动质量突出</b><span>三连率 12.61%、赞:币:藏 ≈ 12.0:3.6:1；点赞率 9.15% 为账号中位（2.90%）的 3.2 倍，观众用「赞+币」双重投票。</span></div><div class="hl hl gold"><b>🧠 心智关键词命中</b><span>弹幕第一关键词「小米」（110 次），叠加「还是 / 视频 / 保时捷」；评论聚焦「山路/场景共鸣」等话题，内容卖点传达清晰。</span></div><div class="hl hl gold"><b>🤝 双 UP 化学反应</b><span>雨哥到处跑 × Upspeed盛嘉成 同框，高赞区「意气风发」「相互欣赏」「事业蒸蒸日上」等评价密集，形成强信任资产与内容差异化。</span></div><div class="hl hl gold"><b>⚡ 节奏型内容验证</b><span>弹幕 30 秒桶峰值 252 条出现在 2:30，为 29 分钟长视频提供完播锚点。</span></div><div class="hl hl gold"><b>🛡️ 舆情极致健康</b><span>负向占比仅 2.1%（6 条零星噪声，无实质负面类型），评论区由粉丝共鸣与玩梗主导，可控且可复用。</span></div><div class="hl hl gold"><b>🗣️ 玩梗自传播资产</b><span>「经典永流传」「时间线收束」等粉丝二创句式出现在高赞位，具传播潜力，可作后续置顶/二创话题运营抓手。</span></div><div class="hl"><b>🛒 购车/改装意向信号</b><span>「价格/购买决策」主题命中 19 次，弹幕「改装」「刹车」高频，受众对车型/改装兴趣真实存在。</span></div></div>
+    <div class="hl-grid"><div class="hl hl gold"><b>🚀 播放开局强劲</b><span>上线 5 天累计 1,320,749 播放、日均 ≈264,150，达 2026 年账号中位（141.1 万）的 93.8%、均值（216.3 万）的 61.1%——发布即冲高，进入账号头部梯队。</span></div><div class="hl hl gold"><b>💎 互动质量突出</b><span>三连率 12.61%、赞:币:藏 ≈ 12.0:3.6:1；点赞率 9.15% 为账号中位（2.90%）的 3.2 倍，观众用「赞+币」双重投票。</span></div><div class="hl hl gold"><b>🧠 心智关键词命中</b><span>弹幕第一关键词「小米」（110 次），叠加「还是 / 视频 / 保时捷」；评论聚焦「山路/场景共鸣」等话题，内容卖点传达清晰。</span></div><div class="hl hl gold"><b>🤝 双 UP 化学反应</b><span>雨哥到处跑 × Upspeed盛嘉成 同框，高赞区「意气风发」「相互欣赏」「事业蒸蒸日上」等评价密集，形成强信任资产与内容差异化。</span></div><div class="hl hl gold"><b>⚡ 节奏型内容验证</b><span>弹幕 30 秒桶峰值 252 条出现在 2:30，为 29 分钟长视频提供完播锚点。</span></div><div class="hl hl gold"><b>🛡️ 舆情极致健康</b><span>负向占比仅 2.1%（6 条零星噪声，无实质负面类型），评论区由粉丝共鸣与玩梗主导，可控且可复用。</span></div><div class="hl hl gold"><b>🗣️ 玩梗自传播资产</b><span>「经典永流传」「时间线收束」等粉丝二创句式出现在高赞位，具传播潜力，可作后续置顶/二创话题运营抓手。</span></div><div class="hl"><b>🛒 购买决策信号</b><span>「价格/购买决策」主题命中 19 次，受众对价格/选购讨论真实存在，可承接试驾/选购向内容引导。</span></div></div>
     <div style="margin-top:18px; padding:14px 16px; background:#f7faff; border:1px solid var(--line); border-radius:12px; font-size:13.5px;">
       <b>📈 后续建议</b> ① 发布 7/14 天再取数复核长尾斜率（本片为 5 天快照）；② 峰值段 2:30 为高能切片候选，可拆条做信息流二次投放；③ 「山路/场景共鸣」讨论热度最高，下期内容可延续该主题钩子；④ 双 UP 同框化学反应强，可复制为系列化合作模板。
     </div>
